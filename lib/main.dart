@@ -8,6 +8,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 import 'constraints/themes.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,6 +19,7 @@ void main() async {
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
   );
+  await MobileAds.instance.initialize();
   runApp(const MyApp());
 }
 

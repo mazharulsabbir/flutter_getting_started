@@ -1,16 +1,43 @@
-# flutter_mobile_template
+## Configuration
 
-A new Flutter project.
+### Add the following to your `lib/constraints/configs.dart` file:`:
+```dart
+class AppConfig {
+  final String _oneSignalAppId = "YOUR_ONESIGNAL_APP_ID";
+  final String _oneSignalRestAPIKey = "YOUR_ONESIGNAL_REST_API_KEY";
 
-## Getting Started
+  String get oneSignalAppId => _oneSignalAppId;
+  String get oneSignalRestAPIKey => _oneSignalRestAPIKey;
+}
+```
 
-This project is a starting point for a Flutter application.
+### [Setup and Configure OneSignal Flutter SDK](https://documentation.onesignal.com/docs/flutter-sdk-setup)
+Add the following to the very top (Line:1 ) of your `android/app/build.gradle` file:
+```gradle
+buildscript {
+    repositories {
+        // ...
+        maven { url 'https://plugins.gradle.org/m2/' } // Gradle Plugin Portal
+    }
+    dependencies {
+        // ...
+        // OneSignal-Gradle-Plugin
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.12.10, 0.99.99]'
+    }
+}
 
-A few resources to get you started if this is your first Flutter project:
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### [Setup Admob Ads](https://developers.google.com/admob/flutter/quick-start)
+Update AndroidManifest.xml
+```xml
+<manifest>
+    <application>
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="YOUR_ADMOB_APP_ID"/>
+    <application>
+<manifest>
+```

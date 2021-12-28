@@ -10,26 +10,50 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  # icons
   cupertino_icons: ^1.0.4
-  freezed_annotation: ^1.1.0
+  flutter_phosphor_icons: ^0.0.1+5
+  font_awesome_flutter: ^9.2.0
+
+  # core
   connectivity: ^3.0.6
-  get: ^4.6.1
+  permission_handler: ^8.3.0
+
+  # ui
   responsive_framework: ^0.1.5
   form_field_validator: ^1.1.0
   loading_overlay: ^0.3.0
-  flutter_phosphor_icons: ^0.0.1+5
-  get_storage: ^2.0.3
-  lottie: ^1.2.1
+
+  # state management
+  get: ^4.6.1
+
+  # files, images & player
+  cached_network_image: ^3.2.0
+  image_picker: ^0.8.4+4
   flutter_svg: ^1.0.0
-  onesignal_flutter: ^3.2.7
+  lottie: ^1.2.1
   youtube_player_flutter: ^8.0.0
+
+  # code generator
+  freezed_annotation: ^1.1.0
+
+  # database
+  get_storage: ^2.0.3
+
+  # social auth
   flutter_facebook_auth: "^3.5.0"
   google_sign_in: ^5.2.1
-  permission_handler: ^8.3.0
-  image_picker: ^0.8.4+4
+
+  # notifications
+  onesignal_flutter: ^3.2.7
+
+  # admob
+  google_mobile_ads: ^1.0.1
+
+  # others
   webview_flutter: ^3.0.0
   url_launcher: ^6.0.17
-  cached_network_image: ^3.2.0
 
 dev_dependencies:
   flutter_test:
@@ -40,14 +64,13 @@ dev_dependencies:
   flutter_launcher_icons: "^0.9.2"
   build_runner:
 
-  # === Generate Launcher Icon ===
-  #flutter pub get
-  #flutter pub run flutter_launcher_icons:main
-
 flutter_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/icon/icon.png"
+  # === Generate Launcher Icon ===
+  #flutter pub get
+  #flutter pub run flutter_launcher_icons:main
 
 flutter:
   uses-material-design: true
