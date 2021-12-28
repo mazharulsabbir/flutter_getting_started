@@ -1,6 +1,6 @@
 ## Configuration
 
-### Add the following to your `lib/constraints/configs.dart` file:`:
+Add the following to your `lib/constraints/configs.dart` file:`:
 ```dart
 class AppConfig {
   final String _oneSignalAppId = "YOUR_ONESIGNAL_APP_ID";
@@ -30,7 +30,7 @@ apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 ```
 
 ### [Setup Admob Ads](https://developers.google.com/admob/flutter/quick-start)
-Update AndroidManifest.xml
+Update `AndroidManifest.xml` with the following:
 ```xml
 <manifest>
     <application>
