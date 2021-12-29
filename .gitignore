@@ -46,3 +46,5 @@ app.*.map.json
 /android/app/release
 
 lib/constraints/configs.dart
+android/app/google-services.json
+ios/GoogleService-Info.plist

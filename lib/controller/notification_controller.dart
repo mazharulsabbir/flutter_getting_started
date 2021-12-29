@@ -15,7 +15,7 @@ class PushNotificationController extends GetxController {
 
     // The promptForPushNotificationsWithUserResponse function will show the iOS push notification prompt. We recommend removing the following code and instead using an In-App Message to prompt for notification permission
     OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
-      debugPrint("Accepted permission: $accepted");
+      debugPrint("[ONE_SIGNAL] iOS Accepted permission: $accepted");
     });
 
     OneSignal.shared.setNotificationWillShowInForegroundHandler((
@@ -31,7 +31,7 @@ class PushNotificationController extends GetxController {
     ) {
       // Will be called whenever a notification is opened/button pressed.
       // result.notification.rawPayload;
-      debugPrint('Notification pressed');
+      debugPrint('[ONE_SIGNAL] Notification pressed');
 
       // Get.to(() => NotificationScreen());
     });
@@ -55,11 +55,11 @@ class PushNotificationController extends GetxController {
     OneSignal.shared.setExternalUserId(externalUserId);
   }
 
-  static void setEmailAddress(String emailAddress) {    
+  static void setEmailAddress(String emailAddress) {
     OneSignal.shared.setEmail(email: emailAddress);
   }
 
-  static Future<dynamic> setCustomDataTag(String key, String value)async {
+  static Future<dynamic> setCustomDataTag(String key, String value) async {
     return await OneSignal.shared.sendTag(key, value);
   }
 }

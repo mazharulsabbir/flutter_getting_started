@@ -43,5 +43,59 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+
+	<!-- Facebook Sign-in Section -->
+	<key>FacebookAppID</key>
+	<string>319660232994965</string>
+	<key>FacebookClientToken</key>
+	<string>280c2492888d823476fbfb350ad5ddc8</string>
+	<key>FacebookDisplayName</key>
+	<string>Flutter Facebook Auth Example</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+	<string>fbapi</string>
+	<string>fb-messenger-share-api</string>
+	<string>fbauth2</string>
+	<string>fbshareextension</string>
+	</array>
+	<!-- End of the facebook Sign-in Section -->
+
+	<!-- Google Sign-in Section -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<!-- TODO Replace this value: -->
+				<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
+				<string>com.googleusercontent.apps.398182532875-jp6qqmjahtcg89en76tfjfuq0o1p3rc6</string>
+				<string>fb319660232994965</string>
+			</array>
+		</dict>
+	</array>
+	<!-- End of the Google Sign-in Section -->
+
+	<!-- Facebook Sign-in Section To use any of the Facebook dialogs (e.g., Login, Share, App Invites, etc.)-->
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+	<string>fbapi</string>
+	<string>fbapi20130214</string>
+	<string>fbapi20130410</string>
+	<string>fbapi20130702</string>
+	<string>fbapi20131010</string>
+	<string>fbapi20131219</string>
+	<string>fbapi20140410</string>
+	<string>fbapi20140116</string>
+	<string>fbapi20150313</string>
+	<string>fbapi20150629</string>
+	<string>fbapi20160328</string>
+	<string>fbauth</string>
+	<string>fb-messenger-share-api</string>
+	<string>fbauth2</string>
+	<string>fbshareextension</string>
+	</array>
+	<!-- End of the Facebook Sign-in Section -->
 </dict>
 </plist>
