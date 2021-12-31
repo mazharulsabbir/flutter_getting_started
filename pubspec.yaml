@@ -54,6 +54,7 @@ dependencies:
   # others
   webview_flutter: ^3.0.0
   url_launcher: ^6.0.17
+  device_info: ^2.0.3
 
 dev_dependencies:
   flutter_test:
