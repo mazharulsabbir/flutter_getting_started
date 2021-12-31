@@ -55,12 +55,8 @@ class AdsController extends GetxController {
   }
 
   // ==== INTERSTITIAL AD ====
-  
-  void _loadInterstitialAd() {
-    if (_interstitialAd != null) {
-      return;
-    }
 
+  void _loadInterstitialAd() {
     InterstitialAd.load(
       adUnitId: _interestitialAdUnitId,
       request: _adRequest,
@@ -78,10 +74,6 @@ class AdsController extends GetxController {
   }
 
   void showInterstitialAd() {
-    if (_interstitialAd != null) {
-      _interstitialAd?.show();
-    }
-
     _interstitialAd?.fullScreenContentCallback = FullScreenContentCallback(
       onAdShowedFullScreenContent: (InterstitialAd ad) =>
           debugPrint('%ad onAdShowedFullScreenContent.'),
@@ -98,15 +90,13 @@ class AdsController extends GetxController {
       onAdImpression: (InterstitialAd ad) =>
           debugPrint('$ad impression occurred.'),
     );
+
+    _interstitialAd?.show();
   }
 
   // ==== REWARD VIDEO AD ====
 
   void _loadRewardVideoAd() {
-    if (_rewardedAd != null) {
-      return;
-    }
-
     RewardedAd.load(
       adUnitId: _rewardAdUnitId,
       request: _adRequest,
@@ -124,14 +114,6 @@ class AdsController extends GetxController {
   }
 
   void showRewardVideoAd() {
-    if (_rewardedAd != null) {
-      _rewardedAd?.show(
-          onUserEarnedReward: (RewardedAd ad, RewardItem rewardItem) {
-        // Reward the user for watching an ad.
-        _loadRewardVideoAd();
-      });
-    }
-
     _rewardedAd?.fullScreenContentCallback = FullScreenContentCallback(
       onAdShowedFullScreenContent: (RewardedAd ad) =>
           debugPrint('$ad onAdShowedFullScreenContent.'),
@@ -145,6 +127,12 @@ class AdsController extends GetxController {
       },
       onAdImpression: (RewardedAd ad) => debugPrint('$ad impression occurred.'),
     );
+
+    _rewardedAd?.show(
+        onUserEarnedReward: (RewardedAd ad, RewardItem rewardItem) {
+      // Reward the user for watching an ad.
+      _loadRewardVideoAd();
+    });
   }
 
   @override
