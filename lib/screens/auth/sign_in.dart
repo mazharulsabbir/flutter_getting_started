@@ -20,32 +20,41 @@ class _SignInPageState extends State<SignInPage> {
       body: const Center(
         child: Text('Login Screen'),
       ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          FloatingActionButton(
-            onPressed: () async {
-              try {
-                final _login = await _authController.signInWithFacebook();
-                _adsController.showInterstitialAd();
-              } catch (e) {
-                debugPrint("$e");
-              }
-            },
-            child: const Icon(Icons.facebook),
-          ),
-          FloatingActionButton(
-            onPressed: () async {
-              try {
-                final _login = await _authController.signInWithGoogle();
-                _adsController.showInterstitialAd();
-              } catch (e) {
-                debugPrint("$e");
-              }
-            },
-            child: const Icon(PhosphorIcons.google_logo_fill),
-          )
-        ],
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: const BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            FloatingActionButton(
+              heroTag: 'signInWithFacebook',
+              onPressed: () async {
+                try {
+                  final _login = await _authController.signInWithFacebook();
+                  _adsController.showInterstitialAd();
+                } catch (e) {
+                  debugPrint("$e");
+                }
+              },
+              child: const Icon(Icons.facebook),
+            ),
+            FloatingActionButton(
+              heroTag: 'signInWithGoogle',
+              onPressed: () async {
+                try {
+                  final _login = await _authController.signInWithGoogle();
+                  _adsController.showInterstitialAd();
+                } catch (e) {
+                  debugPrint("$e");
+                }
+              },
+              child: const Icon(PhosphorIcons.google_logo_fill),
+            )
+          ],
+        ),
       ),
     );
   }

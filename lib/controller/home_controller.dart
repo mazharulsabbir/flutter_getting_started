@@ -9,14 +9,13 @@ class HomeController extends GetxController with StateMixin<List<Post>> {
   @override
   void onInit() {
     super.onInit();
-    _api.posts().then(
-          (response) => change(response, status: RxStatus.success()),
-          onError: (err) => change(null, status: RxStatus.error(err)),
-        );
+    _posts();
   }
 
-  Future<void> refreshPosts() => _api.posts().then(
-          (response) => change(response, status: RxStatus.success()),
-          onError: (err) => change(null, status: RxStatus.error(err)),
-        );
+  Future<void> _posts() => _api.posts().then(
+        (response) => change(response, status: RxStatus.success()),
+        onError: (err) => change(null, status: RxStatus.error(err)),
+      );
+
+  Future<void> refreshPosts() => _posts();
 }
