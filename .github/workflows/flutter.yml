@@ -19,10 +19,11 @@ jobs:
       #   run: pio run -d $GITHUB_WORKSPACE
 
       - name: Create App Config File
-        run: cat /lib/constraints/configs.dart | base64
-        # run: |
-        #   pwd
-        #   ls -la
+        # run: cat /lib/constraints/configs.dart | base64
+        run: |
+          pwd
+          printf "Hello\nWorld\n" > hw.txt
+          ls -la
 
       - name: Create File
         uses: finnp/create-file-action@1.0.0
