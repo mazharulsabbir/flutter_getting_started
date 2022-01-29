@@ -19,7 +19,7 @@ jobs:
       #   run: pio run -d $GITHUB_WORKSPACE
 
       - name: Create App Config File
-        run: cat > ./lib/constraints/configs.dart | base64
+        run: cat /lib/constraints/configs.dart | base64
         # run: |
         #   pwd
         #   ls -la
@@ -27,7 +27,7 @@ jobs:
       - name: Create File
         uses: finnp/create-file-action@1.0.0
         env:
-          FILE_NAME: "./lib/constraints/configs.dart"
+          FILE_NAME: "lib/constraints/configs.dart"
           FILE_DATA: ${{ secrets.APP_CONFIG_DATA }}
 
 
