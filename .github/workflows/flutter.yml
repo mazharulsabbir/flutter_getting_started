@@ -19,7 +19,7 @@ jobs:
       #   run: pio run -d $GITHUB_WORKSPACE
 
       - name: Create App Config File
-        run: cat ./home/runner/work/flutter_getting_started/flutter_getting_started/lib/constraints/configs.dart
+        run: touch ./home/runner/work/flutter_getting_started/flutter_getting_started/lib/constraints/configs.dart | base64
 
       - name: Create File
         uses: finnp/create-file-action@1.0.0
