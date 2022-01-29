@@ -32,9 +32,9 @@ jobs:
       #   run: cat /home/runner/work/flutter_getting_started/lib/constraints/configs.dart
       - name: Create File
         uses: finnp/create-file-action@1.0.0
-          env:
-            FILE_NAME: "/lib/constraints/configs.dart"
-            FILE_DATA: ${{ secrets.APP_CONFIG_DATA }}
+        env:
+          FILE_NAME: "/lib/constraints/configs.dart"
+          FILE_DATA: ${{ secrets.APP_CONFIG_DATA }}
 
 
       # - name: Putting data
@@ -53,9 +53,9 @@ jobs:
 
       - name: Create Google-Services File
         uses: finnp/create-file-action@1.0.0
-          env:
-            FILE_NAME: "/android/app/google-services.json"
-            FILE_DATA: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        env:
+          FILE_NAME: "/android/app/google-services.json"
+          FILE_DATA: ${{ secrets.GOOGLE_SERVICES_JSON }}
 
       # Get flutter dependencies.
       - run: flutter pub get
