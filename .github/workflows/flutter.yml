@@ -21,7 +21,8 @@ jobs:
       - name: Create App Config File
         # run: cat > /home/runner/work/flutter_getting_started/flutter_getting_started/lib/constraints/configs.dart | base64
         run: |
-        printf "Hello\nWorld\n" > hw.txt
+          pwd
+          ls -la
 
       - name: Create File
         uses: finnp/create-file-action@1.0.0
