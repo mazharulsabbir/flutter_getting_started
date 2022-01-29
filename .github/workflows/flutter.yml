@@ -28,22 +28,34 @@ jobs:
           channel: 'beta' # 'dev', 'alpha', default to: 'stable'
           # flutter-version: '1.12.x' # you can also specify exact version of flutter
 
-      - name: Create App Config File
-        run: cat /home/runner/work/flutter_getting_started/lib/constraints/configs.dart
+      # - name: Create App Config File
+      #   run: cat /home/runner/work/flutter_getting_started/lib/constraints/configs.dart
+      - name: Create File
+        uses: finnp/create-file-action@1.0.0
+          env:
+            FILE_NAME: "/lib/constraints/configs.dart"
+            FILE_DATA: ${{ secrets.APP_CONFIG_DATA }}
 
-      - name: Putting data
-        env:
-          DATA: ${{ secrets.APP_CONFIG_DATA }}
-        run: echo $DATA > /home/runner/work/flutter_getting_started/lib/constraints/configs.dart
 
+      # - name: Putting data
+      #   env:
+      #     DATA: ${{ secrets.APP_CONFIG_DATA }}
+      #   run: echo $DATA > /home/runner/work/flutter_getting_started/lib/constraints/configs.dart
+
+
+      # - name: Create Google-Services File
+      #   run: cat /home/runner/work/flutter_getting_started/android/app/google-services.json
+
+      # - name: Putting data
+      #   env:
+      #     DATA: ${{ secrets.GOOGLE_SERVICES_JSON }}
+      #   run: echo $DATA > /home/runner/work/flutter_getting_started/android/app/google-services.json
 
       - name: Create Google-Services File
-        run: cat /home/runner/work/flutter_getting_started/android/app/google-services.json
-
-      - name: Putting data
-        env:
-          DATA: ${{ secrets.GOOGLE_SERVICES_JSON }}
-        run: echo $DATA > /home/runner/work/flutter_getting_started/android/app/google-services.json
+        uses: finnp/create-file-action@1.0.0
+          env:
+            FILE_NAME: "/android/app/google-services.json"
+            FILE_DATA: ${{ secrets.GOOGLE_SERVICES_JSON }}
 
       # Get flutter dependencies.
       - run: flutter pub get
