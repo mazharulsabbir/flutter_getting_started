@@ -16,11 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run PlatformIO
-        ls -a /home/runner/work
         run: pio run -d $GITHUB_WORKSPACE
 
-      # - name: Create App Config File
-      #   run: cat /home/runner/work/flutter_getting_started/lib/constraints/configs.dart
+      - name: Create App Config File
+        run: cat /home/runner/work/flutter_getting_started/flutter_getting_started/lib/constraints/configs.dart
+        
       - name: Create File
         uses: finnp/create-file-action@1.0.0
         env:
