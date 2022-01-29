@@ -23,9 +23,9 @@ jobs:
         run: |
           pwd
           ls
-          cd /lib/constraints/
-          cat configs.dart | base64
-          ls -la
+          # cd /lib/constraints/
+          # cat configs.dart | base64
+          # ls -la
 
       - name: Create File
         uses: finnp/create-file-action@1.0.0
