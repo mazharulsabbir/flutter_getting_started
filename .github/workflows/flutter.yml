@@ -28,19 +28,19 @@ jobs:
           channel: 'beta' # 'dev', 'alpha', default to: 'stable'
           # flutter-version: '1.12.x' # you can also specify exact version of flutter
 
-      - name: Create App Config File
+      # - name: Create App Config File
       - run: cat/home/runner/work/flutter_getting_started/lib/constraints/configs.dart | base64
 
-      - name: Putting data
+      # - name: Putting data
       - env:
           DATA: ${{ secrets.APP_CONFIG_DATA }}
       - run: echo $DATA > /home/runner/work/flutter_getting_started/lib/constraints/configs.dart
 
 
-      - name: Create Google-Services File
+      # - name: Create Google-Services File
       - run: cat/home/runner/work/flutter_getting_started/android/app/google-services.json | base64
 
-      - name: Putting data
+      # - name: Putting data
       - env:
           DATA: ${{ secrets.GOOGLE_SERVICES_JSON }}
       - run: echo $DATA > /home/runner/work/flutter_getting_started/android/app/google-services.json
