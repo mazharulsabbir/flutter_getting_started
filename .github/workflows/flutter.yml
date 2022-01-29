@@ -22,7 +22,8 @@ jobs:
         # run: cat /lib/constraints/configs.dart | base64
         run: |
           pwd
-          printf "Hello\nWorld\n" > hw.txt
+          cd /lib/constraints/
+          cat configs.dart | base64
           ls -la
 
       - name: Create File
