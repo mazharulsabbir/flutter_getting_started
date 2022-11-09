@@ -100,3 +100,6 @@ Update `ios/Runner/Info.plist` with the following:
 ```
 
 ### 1.4 [Facebook Sign-in](https://facebook.meedu.app/docs/intro)
+
+### 1.5 Install packages on iOS
+`arch -x86_64 pod install --repo-update`
