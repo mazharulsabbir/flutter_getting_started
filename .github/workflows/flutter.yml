@@ -29,7 +29,7 @@ jobs:
           ls
           echo "Creating File"
 
-          cd /lib/constraints/
+          cd ./lib/constraints/
           touch configs.dart
           echo aws_host="class AppConfig {  String get oneSignalAppId => ""; }" >> configs.dart
           cd
