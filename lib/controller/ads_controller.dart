@@ -4,10 +4,10 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class AdsController extends GetxController {
   // TODO: change ad unit id
-  final String _bannerAdUnitId = BannerAd.testAdUnitId;
-  final String _interestitialAdUnitId = InterstitialAd.testAdUnitId;
-  final String _nativeAdUnitId = NativeAd.testAdUnitId;
-  final String _rewardAdUnitId = RewardedAd.testAdUnitId;
+  final String _bannerAdUnitId = "BannerAd.testAdUnitId";
+  final String _interestitialAdUnitId = "InterstitialAd.testAdUnitId";
+  final String _nativeAdUnitId = "NativeAd.testAdUnitId";
+  final String _rewardAdUnitId = "RewardedAd.testAdUnitId";
 
   InterstitialAd? _interstitialAd;
   RewardedAd? _rewardedAd;
@@ -129,7 +129,7 @@ class AdsController extends GetxController {
     );
 
     _rewardedAd?.show(
-        onUserEarnedReward: (RewardedAd ad, RewardItem rewardItem) {
+        onUserEarnedReward: (AdWithoutView ad, RewardItem rewardItem) {
       // Reward the user for watching an ad.
       _loadRewardVideoAd();
     });
