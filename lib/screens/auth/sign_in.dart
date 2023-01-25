@@ -13,7 +13,7 @@ class SignInPage extends StatefulWidget {
 
 class _SignInPageState extends State<SignInPage> {
   final AuthController _authController = Get.find<AuthController>();
-  final AdsController _adsController = Get.find<AdsController>();
+  // final AdsController _adsController = Get.find<AdsController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +34,7 @@ class _SignInPageState extends State<SignInPage> {
               onPressed: () async {
                 try {
                   final _login = await _authController.signInWithFacebook();
-                  _adsController.showInterstitialAd();
+                  // _adsController.showInterstitialAd();
                 } catch (e) {
                   debugPrint("$e");
                 }
@@ -46,7 +46,7 @@ class _SignInPageState extends State<SignInPage> {
               onPressed: () async {
                 try {
                   final _login = await _authController.signInWithGoogle();
-                  _adsController.showInterstitialAd();
+                  // _adsController.showInterstitialAd();
                 } catch (e) {
                   debugPrint("$e");
                 }

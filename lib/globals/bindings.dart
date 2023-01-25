@@ -10,7 +10,7 @@ class GlobalBindings extends Bindings {
   void dependencies() {
     Get.put(DeviceInfoController());
     Get.put(PushNotificationController());
-    Get.put(AdsController());
+    // Get.put(AdsController());
     Get.put(AuthController());
   }
 }
