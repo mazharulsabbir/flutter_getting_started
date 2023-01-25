@@ -27,9 +27,12 @@ jobs:
         run: |
           pwd
           ls
-          # cd /lib/constraints/
-          # cat configs.dart | base64
-          # ls -la
+          echo "Creating File"
+
+          cd /lib/constraints/
+          touch configs.dart
+          echo aws_host="class AppConfig {  String get oneSignalAppId => ""; }" >> configs.dart
+          cd
 
       - name: Create File
         uses: finnp/create-file-action@1.0.0
@@ -41,7 +44,7 @@ jobs:
       # - name: Putting data
       #   env:
       #     DATA: ${{ secrets.APP_CONFIG_DATA }}
-      #   run: echo $DATA > /home/runner/work/flutter_getting_started/lib/constraints/configs.dart
+      #   run: echo $DATA > /lib/constraints/configs.dart
 
 
       # - name: Create Google-Services File
