@@ -38,44 +38,7 @@ Update `ios/Runner/Info.plist` with the following:
 
 ### 1.3 [Google Sign-in](https://pub.dev/packages/google_sign_in)
 #### 1.3.1 Android Configuration
-Update `build.gradle` with the following:
-```gradle
-buildscript {
-
-  repositories {
-    // Check that you have the following line (if not, add it):
-    google()  // Google's Maven repository
-  }
-
-  dependencies {
-    // ...
-
-    // Add the following line:
-    classpath 'com.google.gms:google-services:4.3.10'  // Google Services plugin
-  }
-}
-
-allprojects {
-  // ...
-
-  repositories {
-    // Check that you have the following line (if not, add it):
-    google()  // Google's Maven repository
-    // ...
-  }
-}
-```
-
-Update `app/build.gradle` with the following:
-```gradle
-apply plugin: 'com.android.application'
-// Add the following line:
-apply plugin: 'com.google.gms.google-services'  // Google Services plugin
-
-android {
-  // ...
-}
-```
+Generate SHA-1 and put into google cloud project or firebase project settings.
 
 #### 1.3.2 iOS Configuration
 Update `ios/Runner/Info.plist` with the following:
